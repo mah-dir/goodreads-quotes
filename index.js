@@ -65,11 +65,45 @@ const scrapeSite = async (url) => {
   }
 };
 
-(async () => {
+exports.scrapeURLs = async (URLs) => {
+  var dir = "./output";
 
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+
+  let allQuotes = [];
+
+  for (u in URLs) {
+    const fileName = URLs[u].split("/").pop() + ".json";
+
+    if (fs.existsSync(dir + "/" + fileName)) {
+      console.log("Already scraped. File name is : " + fileName);
+      continue;
+    }
+
+    const result = await scrapeSite(URLs[u]);
+    allQuotes = result;
+
+    fs.writeFile(
+      "./output/" + fileName,
+      JSON.stringify(allQuotes, null, "\t"),
+      () => {
+        console.log(
+          "Quotes retrieved and recorded! Can be found in file named: " +
+            fileName
+        );
+      }
+    );
+  }
+};
+
+(async () => {
   const URLs = [
     "https://www.goodreads.com/work/quotes/969064-the-essential-groucho-writings-by-and-for-groucho-marx",
-    "https://www.goodreads.com/quotes/tag/animals"
+    "https://www.goodreads.com/quotes/tag/animals",
+    "https://www.goodreads.com/quotes/tag/zen",
+    "https://www.goodreads.com/quotes/tag/death",
   ];
 
   var dir = "./output";
@@ -84,7 +118,7 @@ const scrapeSite = async (url) => {
     const fileName = URLs[u].split("/").pop() + ".json";
 
     if (fs.existsSync(dir + "/" + fileName)) {
-      console.log('Already scraped. File name is : ' + fileName);
+      console.log("Already scraped. File name is : " + fileName);
       continue;
     }
 
@@ -95,9 +129,11 @@ const scrapeSite = async (url) => {
       "./output/" + fileName,
       JSON.stringify(allQuotes, null, "\t"),
       () => {
-        console.log("Quotes retrieved and recorded! Can be found in file named: " + fileName);
+        console.log(
+          "Quotes retrieved and recorded! Can be found in file named: " +
+            fileName
+        );
       }
     );
-
   }
 })();
