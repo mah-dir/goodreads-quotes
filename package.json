@@ -1,6 +1,6 @@
 {
   "name": "goodreads-quotes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" },
