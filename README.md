@@ -16,11 +16,10 @@ npm install
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [cheerio](https://github.com/cheeriojs/cheerio) - Fast, flexible, and lean implementation of core jQuery designed specifically for the server.
+* [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 
 ## Authors
-[mahsheikhdir](https://github.com/mahsheikhdir)
+Written by [mahsheikhdir](https://github.com/mahsheikhdir)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
