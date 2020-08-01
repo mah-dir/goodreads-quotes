@@ -32,7 +32,7 @@ Saves to file ```output/4918776.Seneca.json``` JSON array in the form of:
         "survival"
       ]
     },
-    ... and more
+    ... 1666 and more
 ]
 ```
 If a file of a URL exists it will not be scraped again.
