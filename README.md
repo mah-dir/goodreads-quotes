@@ -1,4 +1,5 @@
 # goodreads-quotes
+[![npm version](https://badge.fury.io/js/goodreads-quotes.svg)](https://badge.fury.io/js/goodreads-quotes)
 
 📚 Easily scrape quotes from the goodreads.com site by tags, author or book.
 
