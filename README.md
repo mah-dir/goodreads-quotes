@@ -1,6 +1,6 @@
 # goodreads-quotes
 
-Easily scrape quotes from the goodreads.com site by tags, author or book.
+📚 Easily scrape quotes from the goodreads.com site by tags, author or book.
 
 ### Installing
 
